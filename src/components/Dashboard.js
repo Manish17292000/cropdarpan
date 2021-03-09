@@ -1,14 +1,7 @@
 import React, { useState } from "react"
-import { Card, Button, Alert, Navbar, Nav, NavDropdown, Form, FormControl, CardGroup, CardDeck } from "react-bootstrap"
+import { Card, Button, Alert } from "react-bootstrap"
 import { useAuth } from "../contexts/AuthContext"
 import { Link, useHistory } from "react-router-dom"
-import wheat from '../images/wheat.png';
-import cotton from '../images/cotton.png';
-import sunflower from '../images/sunflower.png';
-import sugarcane from '../images/sugar-cane.png';
-
-
-
 
 export default function Dashboard() {
   const [error, setError] = useState("")
@@ -28,59 +21,26 @@ export default function Dashboard() {
 
   return (
     <>
-   <CardDeck >
-  <Card>
-    <Card.Img variant="top" src={cotton} width="200" height="200" />
-    <Card.Body>
-      <Card.Text>
-        Cotton
-      </Card.Text>
-    </Card.Body>
-   </Card>
-   <Card>
-    <Card.Img variant="top" src={wheat} width="200" height="200"/>
-    <Card.Body>
-      <Card.Text>
-        Wheat
-      </Card.Text>
-    </Card.Body>
-   </Card>
-   <Card>
-    <Card.Img variant="top" src={sugarcane} width="200" height="200" />
-    <Card.Body>
-      <Card.Text>
-        Sugar Cane
-      </Card.Text>
-    </Card.Body>
-   </Card>
-   <Card>
-    <Card.Img variant="top" src={sunflower} width="200" height="200"/>
-    <Card.Body>
-      <Card.Text>
-        Sun Flower
-      </Card.Text>
-    </Card.Body>
-   </Card>
-
-   
-</CardDeck>
-
-      {/* <Card class="split left">
-        <Card.Body>
-          <h2 className="text-center mb-4">Profile</h2>
+	<div class="card">
+        <div class="d-flex flex-lg-row flex-column-reverse">
+        <div class="card card11">
+        <div class="row justify-content-center my-auto">
+        <div class="col-md-11 col-10 my-5">
+        <h3 class="mb-5 text-center heading" style={{color: "white"}}><b>Profile</b></h3>
           {error && <Alert variant="danger">{error}</Alert>}
-          <strong>Email:</strong> {currentUser.email}
-        <Button className="w-100" style={{backgroundColor:"green"}}><Link to="/update-profile"><medium class="text-white"><b>Update Profile</b></medium></Link></Button>
-        </Card.Body>
-      </Card>
-      <div className="w-100 text-center mt-2" class="split right">
-      <div class="centered">
-	<p style={{color:"green"}}> Want to Logout?</p>
-        <Button variant="link" onClick={handleLogout} style={{backgroundColor:"green",color:"white"}}>
+          <strong><u>Email ID:</u>  {currentUser.email}</strong>
+	  <br/>
+	  <br/>
+	  <Button className="w-100" class="btn-outline-success" style={{backgroundColor:"white"}}> <Link to="/update-profile" style={{color:"green"}}><medium><b>Update Profile</b> </medium></Link></Button> 
+       </div></div></div>
+       <div class="card card1">
+        <div class="my-auto mx-md-15 px-md-15 right">
+	<p style={{color:"green"}} class="text-center"> Want to Logout?</p>
+        <Button className="w-100" variant="link" onClick={handleLogout} style={{backgroundColor:"green",color:"white"}}>
          <b> Log Out</b>
         </Button>
-      </div></div> */}
-
+      </div></div>
+      </div></div>
     </>
   )
 }

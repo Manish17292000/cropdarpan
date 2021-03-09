@@ -14,40 +14,37 @@ export default function Login() {
   async function handleSubmit(e) {
     e.preventDefault()
     await loginViaPhone(phoneRef.current.value)
-    // 
-    // history.push("/")
   
   }
 
   return (
     <>
-      <Card class="centered">
-        <Card.Body>
-          <h2 className="text-center mb-4">Login with Phone</h2>
+      <div class="card">
+      <div class="d-flex flex-lg-row flex-column-reverse">
+      <div class="card card11">
+      <div class="row justify-content-center my-auto">
+      <div class="col-md-12 col-10 my-5">
+       <h2 class="mb-5 text-center heading" style={{color: "white"}}><b>Login with Phone</b></h2>
           {error && <Alert variant="danger">{error}</Alert>}
-          <Form onSubmit={handleSubmit} class="split left">
+          <Form onSubmit={handleSubmit}>
             <Form.Group id="Phone Number">
-              <Form.Label>Phone Number</Form.Label>
-              <Form.Control type="text" placeholder="Enter Phone Number"  ref={phoneRef} required />
+              <Form.Label><b>Phone Number</b></Form.Label>
+	      <Form.Control type="text" placeholder="Enter Phone Number" ref={phoneRef} required />
             </Form.Group>
-            <div id="recaptcha"></div> 
-            <Button disabled={loading} style={{backgroundColor:"green"}} className="w-100" type="submit">
+            <br/>
+             <div id="recaptcha"></div>
+            <Button disabled={loading} style={{backgroundColor:"white",color:"green"}} className="w-100" type="submit">
              <b> Login</b>
             </Button>
           </Form>
-          <div className="w-100 text-center mt-3">
-            <Link to="/forgot-password"><small class="text-muted">Forgot Password?</small></Link>
-          </div>
-        </Card.Body>
-      </Card>
-      <div className="w-100 text-center mt-2" class="split right">
-      <div class="centered">
-        <p style={{color:"green"}}>Need an account?</p>
+	  </div></div></div>
+      <div class="card card1">
+        <div class="my-auto mx-md-15 px-md-15 right">
+        <p style={{color:"green"}} class="text-center">Don't have an account?</p>
 	<Button className="w-100" style={{backgroundColor:"green"}}><Link to="/signup"><medium class="text-white"><b>Sign up</b></medium></Link></Button>
      </div>
       </div>
+      </div></div>
     </>
   )
 }
-
-

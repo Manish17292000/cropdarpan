@@ -27,11 +27,10 @@ export function AuthProvider({ children }) {
   }
 
   function loginViaPhone(phone) {
-    let recaptcha = new firebase.auth.RecaptchaVerifier('recaptcha')
-    firebase.auth().signInWithPhoneNumber(phone, recaptcha).then( (e) => {
-      const code = prompt('Enter OTP', '');
-      if(code == null) return;
-      e.confirm(code).then( (result) => {
+    let recaptcha = new firebase.auth.RecaptchaVerifier('recaptcha');
+    firebase.auth().signInWithPhoneNumber(phone, recaptcha).then(function(e){
+      let code = prompt('Enter OTP', '')
+      e.confirm(code).then(function(result){
         console.log(result.user);
       })
     })

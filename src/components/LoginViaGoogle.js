@@ -20,23 +20,25 @@ export default function Login() {
 
   return (
     <>
-      <Card class="centered">
-        <Card.Body>
-          <h2 className="text-center mb-4">Login with Google</h2>
+	<div class="card">
+        <div class="d-flex flex-lg-row flex-column-reverse">
+        <div class="card card11">
+        <div class="row justify-content-center my-auto">
+        <div class="col-md-12 col-10 my-5">
+        <h2 class="mb-5 text-center heading" style={{color: "white"}}><b>Login with Google</b></h2>
           {error && <Alert variant="danger">{error}</Alert>}
-          <Form onSubmit={handleSubmit} class="split left">
+          <Form onSubmit={handleSubmit}>
           
-            <Button disabled={loading} className="w-100" style={{backgroundColor:"green"}} type="submit">
+            <Button disabled={loading} className="w-100" style={{backgroundColor:"white",color:"green"}} type="submit">
               <b>Login</b>
             </Button>
           </Form>
-        
-        </Card.Body>
-      </Card>
-      <div className="w-100 text-center mt-2" class="split right">
-      <div class="centered">
-        <p style={{color: "green"}}>Need an account?</p>
+        </div></div></div>
+      <div class="card card1">
+        <div class="my-auto mx-md-15 px-md-15 right">
+        <p style={{color: "green"}} class="text-center">Don't an account?</p>
 	<Button className="w-100" style={{backgroundColor:"green"}}><Link to="/signup"><medium class="text-white"><b>Sign up</b></medium></Link></Button>
+      </div></div>
       </div></div>
     </>
   )

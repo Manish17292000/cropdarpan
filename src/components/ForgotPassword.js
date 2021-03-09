@@ -28,26 +28,23 @@ export default function ForgotPassword() {
 
   return (
     <>
-      <Card class="centered">
-      <Card.Body>
-          <h2 className="text-center mb-4">Password Reset</h2>
+    <div class="card">
+    <div class="d-flex flex-lg-row flex-column-reverse">
+    <div class="card card1111">
+    <div class="row justify-content-center my-auto">
+    <div class="col-md-12 col-10 my-5">
+    <h3 class="mb-5 text-center" style={{color: "white"}}><b>Password Reset</b></h3>
           {error && <Alert variant="danger">{error}</Alert>}
           {message && <Alert variant="success">{message}</Alert>}
-          <Form onSubmit={handleSubmit} class="split left">
+          <Form onSubmit={handleSubmit}>
             <Form.Group id="email">
-              <Form.Label>Email</Form.Label>
+              <Form.Label><b>Email</b></Form.Label>
               <Form.Control type="email" placeholder="Enter Email" ref={emailRef} required />
             </Form.Group>
-            <Button disabled={loading} style={{backgroundColor:"green"}} className="w-100" type="submit">
+            <Button disabled={loading} style={{backgroundColor:"white",color:"green"}} className="w-100" type="submit">
              <b> Reset Password</b>
             </Button></Form>
-	  </Card.Body></Card>
-	  <Card style={{backgroundColor:"#008000"}}></Card>
-	  <Card style={{backgroundColor:"#008000"}}></Card>
-	  <Card style={{backgroundColor:"#008000"}}></Card>
-
-	  <Card class="centered"><Card.Body>
-	  <Form class="split left">
+	  <br/>
           <div className="w-100 text-center mt-3">
             <Button className="w-100"><Link to="/loginViaEmail"><medium class="text-white"><b>Login with Email</b></medium></Link></Button>
           </div>
@@ -56,11 +53,13 @@ export default function ForgotPassword() {
           </div>
 	  <div className="w-100 text-center mt-3">
             <Button className="w-100" style={{backgroundColor:"#9ACD32"}}><Link to="/loginViaGoogle"><medium class="text-white"><b>Login with Google</b></medium></Link></Button>
-          </div></Form></Card.Body></Card>
-      <div className="w-100 text-center mt-2" class="split right">
-      <div class="centered">
-        <p style={{color: "green"}}>Need an account?</p>
+          </div>
+	  </div></div></div>
+      <div class="card card111">
+        <div class="my-auto mx-md-15 px-md-15 right">
+        <p style={{color: "green"}} class="text-center">Don't have an account?</p>
         <Button className="w-100" style={{backgroundColor:"green"}}><Link to="/signup"><medium class="text-white"><b>Sign up</b></medium></Link></Button>
+      </div></div>
       </div></div>
     </>
   )
